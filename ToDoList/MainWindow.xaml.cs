@@ -90,9 +90,10 @@ namespace ToDoList
 
         void SurpriseClick(object sender, RoutedEventArgs e)
         {
-            string[] names = new string[7] { "Paul", "Omar", "David", "Casey", "Kevin", "Thomas", "Omar rocks!" };
+            string[] names = new string[6] { "Paul", "Omar", "David", "Casey", "Kevin", "Thomas" };
             int arrayNum = rnd.Next(names.Length);
             this.typeName.Text = names[arrayNum];
+            this.Button_Click(sender, e);
         }
 
     }

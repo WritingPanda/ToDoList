@@ -17,24 +17,22 @@
             </MenuItem>
         </Menu>
         <Border BorderBrush="#8F87FF" BorderThickness="1"></Border>
-        <StackPanel>
+        <StackPanel Background="AntiqueWhite">
             <TextBlock Margin="20">Say hello to yourself! Enter your name below:</TextBlock>
             <TextBox Margin="20, 5" Name="typeName" SpellCheck.IsEnabled="True" Language="cn"/>
             <TextBox Margin="20, 5" Name="result" TextAlignment="Center"/>
             <Button Margin="20, 5" Click="Button_Click" HorizontalAlignment="Left">Ok</Button>
-            <Button Width="80" Content="Click me!" Height="50" Click="SurpriseClick">
+            <Button Width="80" Content="Click me!" Height="50" Click="SurpriseClick" FontFamily="Impact" FontSize="18.7" Foreground="Gold">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
                             <Ellipse Stroke="Black" StrokeThickness="0">
                                 <Ellipse.Fill>
-                                    <RadialGradientBrush>
-                                        <GradientStop Offset="0" Color="HotPink"/>
-                                        <GradientStop Offset="1" Color="BlanchedAlmond"/>
-                                        <RadialGradientBrush.Transform>
-                                            <ScaleTransform ScaleY="0.75"/>
-                                        </RadialGradientBrush.Transform>
-                                    </RadialGradientBrush>
+                                    <LinearGradientBrush>
+                                        <GradientStop Offset="0" Color="BlueViolet"/>
+                                        <GradientStop Offset="1" Color="FloralWhite"/>
+                                        <GradientStop Offset="0.5" Color="CadetBlue"/>
+                                    </LinearGradientBrush>
                                 </Ellipse.Fill>
                             </Ellipse>
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
