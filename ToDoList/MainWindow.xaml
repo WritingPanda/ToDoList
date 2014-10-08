@@ -2,7 +2,46 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
+    
     <Grid>
-        
+        <Menu Name="MainMenu" Height="20" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <MenuItem Name="FileMenuItem" Header="File">
+                <MenuItem Name="OpenFilesMenuItem" Header="Open File(s)" Click="OpenFilesMenuItem_Click"/>
+                <MenuItem Name="OpenDirMenuItem" Header="Open Directory" Click="OpenDirMenuItem_Click"/>
+                <Separator/>
+                <MenuItem Name="ExitMenuItem" Header="Exit" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Name="EditMenuItem" Header="Edit">
+                <MenuItem Name="PasteMenuItem" Header="Paste" Click="PasteMenuItem_Click"/>
+                <MenuItem Name="ClearInputMenuItem" Header="Clear" Click="ClearInputMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <Border BorderBrush="#8F87FF" BorderThickness="1"></Border>
+        <StackPanel>
+            <TextBlock Margin="20">Say hello to yourself! Enter your name below:</TextBlock>
+            <TextBox Margin="20, 5" Name="typeName" SpellCheck.IsEnabled="True" Language="cn"/>
+            <TextBox Margin="20, 5" Name="result" TextAlignment="Center"/>
+            <Button Margin="20, 5" Click="Button_Click" HorizontalAlignment="Left">Ok</Button>
+            <Button Width="80" Content="Click me!" Height="50" Click="SurpriseClick">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Stroke="Black" StrokeThickness="0">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <GradientStop Offset="0" Color="HotPink"/>
+                                        <GradientStop Offset="1" Color="BlanchedAlmond"/>
+                                        <RadialGradientBrush.Transform>
+                                            <ScaleTransform ScaleY="0.75"/>
+                                        </RadialGradientBrush.Transform>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
